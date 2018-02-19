@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+
+    {{--pesquisa--}}
     <div class="box-header">
         <form action="{{ route('pesquisa') }}" method="POST" class="form form-inline">
             {{ csrf_field() }}
@@ -18,6 +20,7 @@
 
     </div>
 
+    {{--listagem--}}
     @foreach($contatos as $contato)
     <div class="box-body">
         <ul class="todo-list ui-sortable col-lg-10" >
@@ -33,7 +36,13 @@
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </form>
-
+                        <form action="{{url('edit')}}" method="post">
+                            <input type="hidden" name="id" value="{{$contato->id}}">
+                            {{csrf_field()}}
+                            <button type="submit" class="btn btn-success">
+                                <span class="glyphicon glyphicon-check"></span>
+                            </button>
+                        </form>
                     </div>
                 </li>
         </ul>

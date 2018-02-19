@@ -24,4 +24,5 @@ Route::post('/edit', 'ContatoController@edit')->name('edit.store');
 Route::post('/pesquisa', 'ContatoController@pesquisa')->name('pesquisa');
 
 Route::post('/remove' , 'ContatoController@remove')->name('remove');
+Route::post('/edit', 'ContatoController@edit')->name('edit');
 

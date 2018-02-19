@@ -17,22 +17,24 @@
         @endif
         <form method="POST" action="{{ route('cadastro.store') }}">
             {{ csrf_field() }}
+
             <div class="form-group col-lg-5">
-                <input type="text" name="nome" placeholder="Nome" class="form-control">
+                <input type="text" name="nome" value="" placeholder="Nome" class="form-control">
             </div>
 
             <div class="form-group col-lg-5">
-                <input type="text" name="email" placeholder="Email" class="form-control">
+                <input type="text" name="email" value="" placeholder="Email" class="form-control">
             </div>
 
             <div class="form-group col-lg-4">
-                <input type="text" name="telefone" placeholder="Telefone" class="form-control">
+                <input type="text" name="telefone" value="" placeholder="Telefone" class="form-control">
+            </div>
+
+            <div class="form-group col-lg-1">
+                Masculino<input name="masc" value="" type="checkbox" class="checkbox">
             </div>
             <div class="form-group col-lg-1">
-                Masculino<input name="masc" type="checkbox" class="checkbox">
-            </div>
-            <div class="form-group col-lg-1">
-                Feminino<input name="fem" type="checkbox" class="checkbox">
+                Feminino<input name="fem" value="" type="checkbox" class="checkbox">
             </div>
 
             <div class="form-group col-lg-3">
@@ -66,3 +68,19 @@
         </form>
     </div>
 @stop
+
+{{--@if(is_null($contato)){--}}
+{{--{{$valuemasc = 0}}--}}
+{{--{{$valuefem = 0}}--}}
+{{--{{ $nome = ""}}--}}
+{{--{{ $email = ""}}--}}
+{{--{{ $telefone = ""}}--}}
+{{--}@elseif($contato->masc != null)--}}
+{{--{{$valuemasc = 1}}--}}
+{{--@elseif($contato->fem != null){--}}
+{{--{{$valuefem = 1}}--}}
+{{--}--}}
+{{--{{$nome = $contato->nome}}--}}
+{{--{{$email = $contato->email}}--}}
+{{--{{$email = $contato->telefone}}--}}
+{{--@endif--}}

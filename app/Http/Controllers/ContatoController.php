@@ -14,6 +14,8 @@ class ContatoController extends Controller
     public function index()
     {
         $contatos = Contato::all();
+//        if (isset($contatos))
+//            $contato = null;
         return view('contacts', compact('contatos'));
     }
 
@@ -47,6 +49,14 @@ class ContatoController extends Controller
         $contato = Contato::find($id);
         $contato->delete();
         return redirect()->action('ContatoController@index');
+    }
+
+    public function edit(Request $request){
+//        dd($request->id);
+//        $id =$request->id;
+//        $contato = Contato::find($id);
+        //$contato
+//        return view('cadastro', compact('contato'));
     }
 
 
